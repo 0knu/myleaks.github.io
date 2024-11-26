@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="photos/logo.png" type="image/x-icon">
+    <title>myLeaks 🔞</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding-top: 56px; /* Adjust based on navbar height */
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: rgba(33, 37, 41, 0.9); /* Slightly darker transparent background */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+        }
+        .navbar-brand, .nav-link {
+            color: white !important;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Text shadow for readability */
+        }
+        .navbar-toggler {
+            border: none; /* Remove border around the hamburger icon */
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+        /* Dropdown menu styling */
+        .navbar-collapse {
+            justify-content: flex-end;
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #17a2b8 !important; /* Highlighted link color */
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url("/Site\ discord/photos/BG.png"); /* Replace with your background image */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-left: 22%;
+            padding-right: 5%;
+            color: white;
+            text-align: left;
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .hero h1 {
+            margin: 0;
+            font-size: 4rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            letter-spacing: 1px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .hero h2 {
+            margin: 10px 0 0;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.8);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        /* About Section */
+        .about {
+            background-color: #f8f9fa;
+            padding: 80px 20px;
+            text-align: center;
+            flex-grow: 1;
+        }
+        .about h3 {
+            margin-bottom: 20px;
+            font-weight: 700;
+            font-size: 2rem;
+            color: #333;
+        }
+        .about p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .about ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .about li {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin: 10px 0;
+            color: #444;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #101820 ;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="#">myLeaks</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="leaks.html">Leaks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="donate.html">Donation</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+<section class="hero" id="home">
+    <h1 id="welcomeText">Welcome to myLeaks</h1>
+    <h2 id="subtitleText">No1 Site for Leaks WorldWide!</h2>
+</section>
+
+<section class="stats">
+    <div class="container text-center">
+        <h2>Our Statistics</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <h3 id="visitorCount">Members: 33 </h3>
+            </div>
+            <div class="col-md-4">
+                <h3 id="countryCount">Countries: 18</h3>
+            </div>
+            <div class="col-md-3">
+                <h3 id="contentSize">Content: 140,000 Gigabytes</h3>
+                <link rel="stylesheet" href="home.css">
+            </div>
+        </div>
+    </div>
+    <hr>
+</section>
+
+<section class="about" id="about">
+    <h3>About Us</h3>
+    <p>Welcome to our platform, your go-to resource for free leaks from around the world. 
+        Since our launch in 2018, we have grown from focusing solely on OnlyFans leaks to becoming a global hub with over 100,000 monthly visitors.</p>
+    <p><strong>What We Offer:</strong></p>
+    <ul class="list-unstyled">
+        <li><strong>Diverse Content:</strong> Access a wide range of leaks from multiple countries and platforms.</li>
+        <li><strong>User-Centric Design:</strong> Enjoy a seamless browsing experience with easy navigation.</li>
+        <li><strong>Quality Assurance:</strong> Our team verifies information to ensure accuracy and reliability.</li>
+        <li><strong>Community Engagement:</strong> We value your feedback and encourage interaction to improve our services.</li>
+    </ul>
+    <p>Join us on this journey as we continue to provide the best leaks for free. Thank you for being part of our community!</p>
+</section>
+
+<footer>
+    <div class="social-links">
+        <a href="https://discord.gg/FrJa4C5m" target="_blank">Discord</a>
+        <a href="https://x.com/0knuSOL" target="_blank">Twitter</a>
+    </div> 
+    <br>
+    <p>&copy; 2024 All Rights Reserved. myLeaks Loud & Proud.</p>
+</footer>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    function typeWriter(element, text, delay) {
+        let i = 0;
+        function typing() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typing, delay);
+            } else {
+                element.style.opacity = 1; // Fade in after typing
+            }
+        }
+        typing();
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const welcomeText = document.getElementById("welcomeText");
+        const subtitleText = document.getElementById("subtitleText");
+        welcomeText.innerHTML = ""; // Clear the text to prevent duplication
+        subtitleText.innerHTML = ""; // Clear the text to prevent duplication
+        typeWriter(welcomeText, "Welcome to myLeaks", 100); // Typing effect for welcome text
+        setTimeout(() => {
+            typeWriter(subtitleText, "No1 Site for Leaks WorldWide!", 100); // Typing effect for subtitle
+        }, welcomeText.innerHTML.length * 100 + 500); // Delay for subtitle
+    });
+</script>
+
+</body>
+</html>
