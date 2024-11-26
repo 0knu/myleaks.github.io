@@ -52,89 +52,110 @@
 
         /* Hero Section */
         .hero {
-            background-image: url("/background.jpg"); /* Replace with your background image */
-            background-size: cover;
-            background-position: center;
+            background-color: black;
+            position: relative;
             height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding-left: 22%;
-            padding-right: 5%;
             color: white;
-            text-align: left;
-            animation: fadeIn 1s ease-in;
+            text-align: center;
+            overflow: hidden;
         }
+
+        /* Decorative Dots */
+        .dot {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0.7;
+        }
+        .dot.small {
+            width: 10px;
+            height: 10px;
+        }
+        .dot.medium {
+            width: 20px;
+            height: 20px;
+        }
+        .dot.large {
+            width: 30px;
+            height: 30px;
+        }
+        .dot:nth-child(1) { top: 20%; left: 10%; }
+        .dot:nth-child(2) { top: 50%; left: 30%; }
+        .dot:nth-child(3) { top: 70%; left: 20%; }
+        .dot:nth-child(4) { top: 10%; left: 60%; }
+        .dot:nth-child(5) { top: 40%; left: 80%; }
+        .dot:nth-child(6) { top: 90%; left: 70%; }
+        .dot:nth-child(7) { top: 30%; left: 50%; }
+
+        /* Statistics Section */
+        .stats {
+            background-color: #f8f9fa;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .stats h2 {
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        .stats h3 {
+            font-size: 1.5rem;
+            margin: 15px 0;
+            color: #555;
+        }
+        .stats .row > div {
+            margin-bottom: 20px;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #101820;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: auto; /* Push footer to the bottom */
+        }
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        .social-links a:hover {
+            color: #17a2b8;
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
+
+        /* Slightly smaller title and subtitle */
         .hero h1 {
-            margin: 0;
-            font-size: 4rem;
+            font-size: 5rem; /* Slightly reduced size */
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
             letter-spacing: 1px;
             opacity: 0;
             transition: opacity 0.5s ease;
         }
+
         .hero h2 {
-            margin: 10px 0 0;
-            font-size: 2.5rem;
+            font-size: 3rem; /* Slightly reduced size */
+            margin-top: 10px;
             font-weight: 400;
             color: rgba(255, 255, 255, 0.8);
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
             opacity: 0;
             transition: opacity 0.5s ease;
         }
-
-        /* About Section */
-        .about {
-            background-color: #f8f9fa;
-            padding: 80px 20px;
-            text-align: center;
-            flex-grow: 1;
-        }
-        .about h3 {
-            margin-bottom: 20px;
-            font-weight: 700;
-            font-size: 2rem;
-            color: #333;
-        }
-        .about p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 20px;
-        }
-        .about ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .about li {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin: 10px 0;
-            color: #444;
-        }
-
-        /* Footer Section */
-        footer {
-            background-color: #101820 ;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-        }
-        .social-links a {
-            color: white;
-            margin: 0 10px;
-            text-decoration: none;
-        }
     </style>
 </head>
 <body>
-
     <header>
         <nav class="navbar navbar-expand-lg">
             <a class="navbar-brand" href="#">myLeaks</a>
@@ -160,57 +181,70 @@
         </nav>
     </header>
 
-<section class="hero" id="home">
-    <h1 id="welcomeText">Welcome to myLeaks</h1>
-    <h2 id="subtitleText">No1 Site for Leaks WorldWide!</h2>
-</section>
+    <section class="hero" id="home">
+        <!-- Decorative dots -->
+        <div class="dot small"></div>
+        <div class="dot medium"></div>
+        <div class="dot large"></div>
+        <div class="dot small"></div>
+        <div class="dot medium"></div>
+        <div class="dot large"></div>
+        <div class="dot small"></div>
 
-<section class="stats">
-    <div class="container text-center">
-        <h2>Our Statistics</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <h3 id="visitorCount">Members: 33 </h3>
-            </div>
-            <div class="col-md-4">
-                <h3 id="countryCount">Countries: 18</h3>
-            </div>
-            <div class="col-md-3">
-                <h3 id="contentSize">Content: 140,000 Gigabytes</h3>
-                <link rel="stylesheet" href="home.css">
+        <h1 id="welcomeText">Welcome to myLeaks</h1>
+        <h2 id="subtitleText">No1 Site for Leaks WorldWide!</h2>
+    </section>
+
+    <section class="stats">
+        <div class="container text-center">
+            <h2>Our Statistics</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3 id="visitorCount">Members: 33 </h3>
+                </div>
+                <div class="col-md-4">
+                    <h3 id="countryCount">Countries: 18</h3>
+                </div>
+                <div class="col-md-3">
+                    <h3 id="contentSize">Content: 140,000 Gigabytes</h3>
+                    <link rel="stylesheet" href="home.css">
+                </div>
             </div>
         </div>
-    </div>
-    <hr>
-</section>
+        <hr>
+    </section>
 
-<section class="about" id="about">
-    <h3>About Us</h3>
-    <p>Welcome to our platform, your go-to resource for free leaks from around the world. 
-        Since our launch in 2018, we have grown from focusing solely on OnlyFans leaks to becoming a global hub with over 100,000 monthly visitors.</p>
-    <p><strong>What We Offer:</strong></p>
-    <ul class="list-unstyled">
-        <li><strong>Diverse Content:</strong> Access a wide range of leaks from multiple countries and platforms.</li>
-        <li><strong>User-Centric Design:</strong> Enjoy a seamless browsing experience with easy navigation.</li>
-        <li><strong>Quality Assurance:</strong> Our team verifies information to ensure accuracy and reliability.</li>
-        <li><strong>Community Engagement:</strong> We value your feedback and encourage interaction to improve our services.</li>
-    </ul>
-    <p>Join us on this journey as we continue to provide the best leaks for free. Thank you for being part of our community!</p>
-</section>
-
-<footer>
-    <div class="social-links">
-        <a href="https://discord.gg/FrJa4C5m" target="_blank">Discord</a>
-        <a href="https://x.com/0knuSOL" target="_blank">Twitter</a>
-    </div> 
-    <br>
-    <p>&copy; 2024 All Rights Reserved. myLeaks Loud & Proud.</p>
-</footer>
+    <section class="about" id="about">
+        <center>
+            <h3><strong>About Us</strong></h3>
+            <p><strong>Welcome to our platform, your go-to resource for free leaks from around the world. 
+                Since our launch in 2018, we have grown from focusing solely on OnlyFans leaks to becoming a global hub with over 100,000 monthly visitors.</strong></p>
+            <p><strong>What We Offer:</strong></p>
+            <ul class="list-unstyled">
+                <li><strong>Diverse Content:</strong> Access a wide range of leaks from multiple countries and platforms.</li>
+                <li><strong>User-Centric Design:</strong> Enjoy a seamless browsing experience with easy navigation.</li>
+                <li><strong>Quality Assurance:</strong> Our team verifies information to ensure accuracy and reliability.</li>
+                <li><strong>Community Engagement:</strong> We value your feedback and encourage interaction to improve our services.</li>
+            </ul>
+            <p><strong>Join us on this journey as we continue to provide the best leaks for free. Thank you for being part of our community!</strong></p>
+        </center>
+    </section>
+    
+    
+    <footer>
+        <div class="social-links">
+            <a href="https://discord.gg/FrJa4C5m" target="_blank">Discord</a>
+            <a href="https://x.com/0knuSOL" target="_blank">Twitter</a>
+        </div>
+        <br>
+        <p>&copy; 2024 All Rights Reserved. myLeaks Loud & Proud.</p>
+    </footer>
 
 <!-- Bootstrap JS and dependencies -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 <script>
     function typeWriter(element, text, delay) {
         let i = 0;
@@ -237,6 +271,7 @@
         }, welcomeText.innerHTML.length * 100 + 500); // Delay for subtitle
     });
 </script>
+
 
 </body>
 </html>
