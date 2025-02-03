@@ -127,346 +127,550 @@
         </nav>
     </header>
 
-    <!-- Referral Boxes Section -->
-    <div class="container mt-5 pt-5">
-        <h1 class="text-center" style="color: #fff;">Greek Leaks</h1>
-        <div class="row justify-content-center">
-
-            <!-- Referral Box 1 -->
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://link-hub.net/448681/arbiola-leaks" target="_blank" class="referral-box">
-                    <div class="referral-icon">
-                        <img src="photos/greekflag.webp" alt="Arbiola" style="display: block; height: 50px; width: auto; object-fit: cover; border: none; padding: 0; margin: 0;">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="photos/logo.png" type="image/x-icon">
+        <title>Greek Leaks</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+                color: white;
+                animation: gradientBG 10s ease infinite;
+                background-size: 400% 400%;
+            }
+    
+            @keyframes gradientBG {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+    
+            /* Navbar Styling */
+            .navbar {
+                background-color: rgba(15, 12, 41, 0.9);
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 10;
+                box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+            }
+            .navbar-brand, .nav-link {
+                color: white !important;
+                font-weight: 500;
+            }
+            .navbar-toggler {
+                border: none;
+            }
+            .navbar-toggler-icon {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+            }
+            .navbar-collapse {
+                justify-content: flex-end;
+            }
+            .nav-link:hover {
+                color: #17a2b8 !important;
+            }
+    
+            /* Referral Box Styling */
+            .referral-box {
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 20px;
+                padding: 25px;
+                margin: 15px;
+                text-align: center;
+                height: 180px;
+                max-width: 400px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+                color: white;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                text-decoration: none;
+                position: relative;
+                overflow: hidden;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(12px);
+            }
+    
+            .referral-box:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+                background: rgba(255, 255, 255, 0.08);
+                border-color: rgba(255, 255, 255, 0.2);
+            }
+    
+            .referral-box::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+                transition: 0.5s;
+            }
+    
+            .referral-box:hover::before {
+                left: 100%;
+            }
+    
+            .referral-icon {
+                flex-shrink: 0;
+                margin-right: 25px;
+                transition: all 0.3s ease;
+            }
+    
+            .referral-box:hover .referral-icon {
+                transform: scale(1.1);
+            }
+    
+            .referral-icon img {
+                height: 60px;
+                width: auto;
+                filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+                border-radius: 4px;
+            }
+    
+            .referral-content {
+                flex-grow: 1;
+                text-align: left;
+            }
+    
+            .referral-content h3 {
+                margin: 0 0 8px 0;
+                font-size: 1.4rem;
+                font-weight: 600;
+                color: #fff;
+                letter-spacing: -0.5px;
+            }
+    
+            .referral-content p {
+                margin: 0;
+                font-size: 0.95rem;
+                color: rgba(255, 255, 255, 0.8);
+                line-height: 1.4;
+                font-weight: 300;
+            }
+    
+            .data-badge {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                background: linear-gradient(45deg, #2196f3, #e91e63);
+                padding: 4px 12px;
+                border-radius: 20px;
+                font-size: 0.8rem;
+                font-weight: 500;
+                color: white;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navigation Bar -->
+        <header>
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="#">myLeaks</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="leaks.html">Leaks</a></li>
+                        <li class="nav-item"><a class="nav-link" href="donate.html">Donation</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    
+        <!-- Referral Boxes Section -->
+        <div class="container mt-5 pt-5">
+            <h1 class="text-center" style="color: #fff;">Greek Leaks</h1>
+            <div class="row justify-content-center">
+                <!-- All Referral Boxes -->
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <a href="https://link-center.net/1288063/arbiola-leaks" target="_blank" class="referral-box">
+                        <span class="data-badge">100+</span>
+                        <div class="referral-icon">
+                            <img src="photos/greekflag.webp" alt="Arbiola">
+                        </div>
+                        <div class="referral-content">
+                            <h3>Arbiola</h3>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <a href="https://link-center.net/1288063/bitsiou-leaks" target="_blank" class="referral-box">
+                        <span class="data-badge">85+</span>
+                        <div class="referral-icon">
+                            <img src="photos/greekflag.webp" alt="Bitsiou">
+                        </div>
+                        <div class="referral-content">
+                            <h3>Bitsiou</h3>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <a href="https://link-target.net/1288063/blessed-leaks" target="_blank" class="referral-box">
+                        <span class="data-badge">70+</span>
+                        <div class="referral-icon">
+                            <img src="photos/greekflag.webp" alt="Blessed">
+                        </div>
+                        <div class="referral-content">
+                            <h3>Blessed</h3>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <a href="https://link-center.net/1288063/dat-lilly-leaks" target="_blank" class="referral-box">
+                        <span class="data-badge">50+</span>
+                        <div class="referral-icon">
+                            <img src="photos/greekflag.webp" alt="Dat Lilly">
+                        </div>
+                        <div class="referral-content">
+                            <h3>Dat Lilly</h3>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <a href="https://link-hub.net/1288063/dwwwra-leaks" target="_blank" class="referral-box">
+                        <span class="data-badge">60+</span>
+                        <div class="referral-icon">
+                            <img src="photos/greekflag.webp" alt="Dwwwra">
+                        </div>
+                        <div class="referral-content">
+                            <h3>Dwwwra</h3>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <a href="https://direct-link.net/1288063/foureira-leaks" target="_blank" class="referral-box">
+                        <span class="data-badge">75+</span>
+                        <div class="referral-icon">
+                            <img src="photos/greekflag.webp" alt="Foureira">
+                        </div>
+                        <div class="referral-content">
+                            <h3>Foureira</h3>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <a href="https://direct-link.net/1288063/ghetto-queen-leaks" target="_blank" class="referral-box">
+                        <span class="data-badge">90+</span>
+                        <div class="referral-icon">
+                            <img src="photos/greekflag.webp" alt="Ghetto Queen">
+                        </div>
+                        <div class="referral-content">
+                            <h3>Ghetto Queen</h3>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <a href="https://link-center.net/1288063/giousef-leaks" target="_blank" class="referral-box">
+                        <span class="data-badge">65+</span>
+                        <div class="referral-icon">
+                            <img src="photos/greekflag.webp" alt="Giousef">
+                        </div>
+                        <div class="referral-content">
+                            <h3>Giousef</h3>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <a href="https://direct-link.net/1288063/gkougkou-leaks" target="_blank" class="referral-box">
+                        <span class="data-badge">55+</span>
+                        <div class="referral-icon">
+                            <img src="photos/greekflag.webp" alt="Gkougkou">
+                        </div>
+                        <div class="referral-content">
+                            <h3>Gkougkou</h3>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <a href="https://direct-link.net/1288063/isyourgirlangie-leaks" target="_blank" class="referral-box">
+                        <span class="data-badge">80+</span>
+                        <div class="referral-icon">
+                            <img src="photos/greekflag.webp" alt="IsYourGirlAngie">
+                        </div>
+                        <div class="referral-content">
+                            <h3>IsYourGirlAngie</h3>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <a href="https://link-center.net/1288063/kassia-leaks" target="_blank" class="referral-box">
+                        <span class="data-badge">45+</span>
+                        <div class="referral-icon">
+                            <img src="photos/greekflag.webp" alt="Kassia">
+                        </div>
+                        <div class="referral-content">
+                            <h3>Kassia</h3>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <a href="https://link-hub.net/1288063/laskaraki-leaks" target="_blank" class="referral-box">
+                        <span class="data-badge">70+</span>
+                        <div class="referral-icon">
+                            <img src="photos/greekflag.webp" alt="Laskaraki">
+                        </div>
+                        <div class="referral-content">
+                            <h3>Laskaraki</h3>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <a href="https://link-hub.net/1288063/marilouko-leaks" target="_blank" class="referral-box">
+                        <span class="data-badge">60+</span>
+                        <div class="referral-icon">
+                            <img src="photos/greekflag.webp" alt="Marilouko">
+                        </div>
+                        <div class="referral-content">
+                            <h3>Marilouko</h3>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <a href="https://link-center.net/1288063/mariposa-leaks" target="_blank" class="referral-box">
+                        <span class="data-badge">85+</span>
+                        <div class="referral-icon">
+                            <img src="photos/greekflag.webp" alt="Mariposa">
+                        </div>
+                        <div class="referral-content">
+                            <h3>Mariposa</h3>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <a href="https://direct-link.net/1288063/natalia-lambrou-leaks" target="_blank" class="referral-box">
+                        <span class="data-badge">75+</span>
+                        <div class="referral-icon">
+                            <img src="photos/greekflag.webp" alt="Natalia Lambrou">
+                        </div>
+                        <div class="referral-content">
+                            <h3>Natalia Lambrou</h3>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <a href="https://link-hub.net/1288063/pothiti-leaks" target="_blank" class="referral-box">
+                        <span class="data-badge">65+</span>
+                        <div class="referral-icon">
+                            <img src="photos/greekflag.webp" alt="Pothiti">
+                        </div>
+                        <div class="referral-content">
+                            <h3>Pothiti</h3>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <a href="https://link-hub.net/1288063/sofia-firou" target="_blank" class="referral-box">
+                        <span class="data-badge">55+</span>
+                        <div class="referral-icon">
+                            <img src="photos/greekflag.webp" alt="Sofia Firou">
+                        </div>
+                        <div class="referral-content">
+                            <h3>Sofia Firou</h3>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                        <a href="https://link-target.net/1288063/sofia-rizou" target="_blank" class="referral-box">
+                            <span class="data-badge">60+</span>
+                            <div class="referral-icon">
+                                <img src="photos/greekflag.webp" alt="Sofia Rizou">
+                            </div>
+                            <div class="referral-content">
+                                <h3>Sofia Rizou</h3>
+                                <p></p>
+                            </div>
+                        </a>
                     </div>
-                    <div class="referral-content">
-                        <h3>Arbiola</h3>
-                        <p>Password: MrZWth</p>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <a href="https://link-target.net/1288063/sofroni-leaks" target="_blank" class="referral-box">
+                            <span class="data-badge">70+</span>
+                            <div class="referral-icon">
+                                <img src="photos/greekflag.webp" alt="Sofroni">
+                            </div>
+                            <div class="referral-content">
+                                <h3>Sofroni</h3>
+                                <p></p>
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>            
-            <!-- Referral Box 2 -->
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://link-center.net/448681/bitsiou-leaks" target="_blank" class="referral-box">
-                    <div class="referral-icon">
-                        <img src="photos/greekflag.webp" alt="Arbiola" style="display: block; height: 50px; width: auto; object-fit: cover; border: none; padding: 0; margin: 0;">
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <a href="https://link-target.net/1288063/spiridoula-mc-leaks" target="_blank" class="referral-box">
+                            <span class="data-badge">50+</span>
+                            <div class="referral-icon">
+                                <img src="photos/greekflag.webp" alt="Spiridoula">
+                            </div>
+                            <div class="referral-content">
+                                <h3>Spiridoula</h3>
+                                <p></p>
+                            </div>
+                        </a>
                     </div>
-                    <div class="referral-content">
-                        <h3>Bitsiou</h3>
-                        <p>Password: 1vSb1E</p>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <a href="https://link-center.net/1288063/super-kiki-leaks" target="_blank" class="referral-box">
+                            <span class="data-badge">80+</span>
+                            <div class="referral-icon">
+                                <img src="photos/greekflag.webp" alt="SuperKiki">
+                            </div>
+                            <div class="referral-content">
+                                <h3>SuperKiki</h3>
+                                <p></p>
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>            
-            <!-- Referral Box 3 -->
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://direct-link.net/448681/blessed-leaks" target="_blank" class="referral-box">
-                    <div class="referral-icon">
-                        <img src="photos/greekflag.webp" alt="Arbiola" style="display: block; height: 50px; width: auto; object-fit: cover; border: none; padding: 0; margin: 0;">
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <a href="https://link-target.net/1288063/taekwondo-girl-leaks" target="_blank" class="referral-box">
+                            <span class="data-badge">65+</span>
+                            <div class="referral-icon">
+                                <img src="photos/greekflag.webp" alt="Taekwondo Girl">
+                            </div>
+                            <div class="referral-content">
+                                <h3>Taekwondo Girl</h3>
+                                <p></p>
+                            </div>
+                        </a>
                     </div>
-                    <div class="referral-content">
-                        <h3>Blessed</h3>
-                        <p>Password: xswbsT</p>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <a href="https://link-center.net/1288063/titi-leaks" target="_blank" class="referral-box">
+                            <span class="data-badge">55+</span>
+                            <div class="referral-icon">
+                                <img src="photos/greekflag.webp" alt="TITI">
+                            </div>
+                            <div class="referral-content">
+                                <h3>TITI</h3>
+                                <p></p>
+                            </div>
+                        </a>
                     </div>
-                </a>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <a href="https://link-target.net/1288063/touni-leaks" target="_blank" class="referral-box">
+                            <span class="data-badge">75+</span>
+                            <div class="referral-icon">
+                                <img src="photos/greekflag.webp" alt="Touni">
+                            </div>
+                            <div class="referral-content">
+                                <h3>Touni</h3>
+                                <p></p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <a href="https://direct-link.net/1288063/xoulh-leaks" target="_blank" class="referral-box">
+                            <span class="data-badge">60+</span>
+                            <div class="referral-icon">
+                                <img src="photos/greekflag.webp" alt="Xoulh">
+                            </div>
+                            <div class="referral-content">
+                                <h3>Xoulh</h3>
+                                <p></p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <a href="https://direct-link.net/1288063/yroance-leaks" target="_blank" class="referral-box">
+                            <span class="data-badge">70+</span>
+                            <div class="referral-icon">
+                                <img src="photos/greekflag.webp" alt="Yroance">
+                            </div>
+                            <div class="referral-content">
+                                <h3>Yroance</h3>
+                                 <p></p>
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://link-hub.net/448681/dat-lilly-leaks" target="_blank" class="referral-box">
-                    <div class="referral-icon">
-                        <img src="photos/greekflag.webp" alt="Arbiola" style="display: block; height: 50px; width: auto; object-fit: cover; border: none; padding: 0; margin: 0;">
-                    </div>
-                    <div class="referral-content">
-                        <h3>Dat Lilly</h3>
-                        <p>Password: UFwdFB</p>
-                    </div>
-                </a>
-            </div>  
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://link-hub.net/448681/dwwwra-leaks" target="_blank" class="referral-box">
-                    <div class="referral-icon">
-                        <img src="photos/greekflag.webp" alt="Arbiola" style="display: block; height: 50px; width: auto; object-fit: cover; border: none; padding: 0; margin: 0;">
-                    </div>
-                    <div class="referral-content">
-                        <h3>Dwwwra</h3>
-                        <p>Password: Ym5taF</p>
-                    </div>
-                </a>
-            </div>  
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://link-center.net/448681/foureira-leaks" target="_blank" class="referral-box">
-                    <div class="referral-icon">
-                        <img src="photos/greekflag.webp" alt="Arbiola" style="display: block; height: 50px; width: auto; object-fit: cover; border: none; padding: 0; margin: 0;">
-                    </div>
-                    <div class="referral-content">
-                        <h3>Foureira</h3>
-                        <p>Password: zcZwj4</p>
-                    </div>
-                </a>
-            </div>  
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://direct-link.net/448681/ghetto-queen-leaks" target="_blank" class="referral-box">
-                    <div class="referral-icon">
-                        <img src="photos/greekflag.webp" alt="Arbiola" style="display: block; height: 50px; width: auto; object-fit: cover; border: none; padding: 0; margin: 0;">
-                    </div>
-                    <div class="referral-content">
-                        <h3>Ghetto Queen</h3>
-                        <p>Password: T6VMgC</p>
-                    </div>
-                </a>
-            </div>  
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://direct-link.net/448681/giousef-leaks" target="_blank" class="referral-box">
-                    <div class="referral-icon">
-                        <img src="photos/greekflag.webp" alt="Arbiola" style="display: block; height: 50px; width: auto; object-fit: cover; border: none; padding: 0; margin: 0;">
-                    </div>
-                    <div class="referral-content">
-                        <h3>Giousef</h3>
-                        <p>Password: ckxKQD</p>
-                    </div>
-                </a>
-            </div>  
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://link-center.net/448681/gkougkou-leaks" target="_blank" class="referral-box">
-                    <div class="referral-icon">
-                        <img src="photos/greekflag.webp" alt="Arbiola" style="display: block; height: 50px; width: auto; object-fit: cover; border: none; padding: 0; margin: 0;">
-                    </div>
-                    <div class="referral-content">
-                        <h3>Gkougkou</h3>
-                        <p>Password: kMcPky</p>
-                    </div>
-                </a>
-            </div>  
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://link-target.net/448681/isyourgirlangie-leaks" target="_blank" class="referral-box">
-                    <div class="referral-icon">
-                        <img src="photos/greekflag.webp" alt="Arbiola" style="display: block; height: 50px; width: auto; object-fit: cover; border: none; padding: 0; margin: 0;">
-                    </div>
-                    <div class="referral-content">
-                        <h3>IsYourGirlAngie</h3>
-                        <p>Password: Cu7UfD</p>
-                    </div>
-                </a>
-            </div>  
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://link-target.net/448681/kassia-leaks" target="_blank" class="referral-box">
-                    <div class="referral-icon">
-                        <img src="photos/greekflag.webp" alt="Arbiola" style="display: block; height: 50px; width: auto; object-fit: cover; border: none; padding: 0; margin: 0;">
-                    </div>
-                    <div class="referral-content">
-                        <h3>Kassia</h3>
-                        <p>Password: Dy64oQ</p>
-                    </div>
-                </a>
-            </div>  
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://direct-link.net/448681/laskaraki-leaks" target="_blank" class="referral-box">
-                    <div class="referral-icon">
-                        <img src="photos/greekflag.webp" alt="Arbiola" style="display: block; height: 50px; width: auto; object-fit: cover; border: none; padding: 0; margin: 0;">
-                    </div>
-                    <div class="referral-content">
-                        <h3>Laskaraki</h3>
-                        <p>Password: 2VeSHq</p>
-                    </div>
-                </a>
-            </div>  
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://link-center.net/448681/marilouko-leaks" target="_blank" class="referral-box">
-                    <div class="referral-icon">
-                        <img src="photos/greekflag.webp" alt="Arbiola" style="display: block; height: 50px; width: auto; object-fit: cover; border: none; padding: 0; margin: 0;">
-                    </div>
-                    <div class="referral-content">
-                        <h3>Marilouko</h3>
-                        <p>Password: EkzTkc</p>
-                    </div>
-                </a>
-            </div>  
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://direct-link.net/448681/mariposa-leaks" target="_blank" class="referral-box">
-                    <div class="referral-icon">
-                        <img src="photos/greekflag.webp" alt="Arbiola" style="display: block; height: 50px; width: auto; object-fit: cover; border: none; padding: 0; margin: 0;">
-                    </div>
-                    <div class="referral-content">
-                        <h3>Mariposa</h3>
-                        <p>Password: uUvGuB</p>
-                    </div>
-                </a>
-            </div>  
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://link-center.net/448681/nataliaaa-leaks" target="_blank" class="referral-box">
-                    <div class="referral-icon">
-                        <img src="photos/greekflag.webp" alt="Arbiola" style="display: block; height: 50px; width: auto; object-fit: cover; border: none; padding: 0; margin: 0;">
-                    </div>
-                    <div class="referral-content">
-                        <h3>Natalia Lambrou</h3>
-                        <p>Password: etkqvE</p>
-                    </div>
-                </a>
-            </div>  
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://link-hub.net/448681/pothiti-leaks" target="_blank" class="referral-box">
-                    <div class="referral-icon">
-                        <img src="photos/greekflag.webp" alt="Arbiola" style="display: block; height: 50px; width: auto; object-fit: cover; border: none; padding: 0; margin: 0;">
-                    </div>
-                    <div class="referral-content">
-                        <h3>Pothiti</h3>
-                        <p>Password: 5qTMgB</p>
-                    </div>
-                </a>
-            </div>  
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://link-center.net/448681/sofia-firou-leaks" target="_blank" class="referral-box">
-                    <div class="referral-icon">
-                        <img src="photos/greekflag.webp" alt="Arbiola" style="display: block; height: 50px; width: auto; object-fit: cover; border: none; padding: 0; margin: 0;">
-                    </div>
-                    <div class="referral-content">
-                        <h3>Sofia Firou</h3>
-                        <p>Password: YSzuM2</p>
-                    </div>
-                </a>
-            </div>  
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://link-hub.net/448681/sofia-rizou-leaks" target="_blank" class="referral-box">
-                    <div class="referral-icon">
-                        <img src="photos/greekflag.webp" alt="Arbiola" style="display: block; height: 50px; width: auto; object-fit: cover; border: none; padding: 0; margin: 0;">
-                    </div>
-                    <div class="referral-content">
-                        <h3>Sofia Rizou</h3>
-                        <p>Password: vgqhRh</p>
-                    </div>
-                </a>
-            </div>  
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://link-hub.net/448681/sofroni-leaks" target="_blank" class="referral-box">
-                    <div class="referral-icon">
-                        <img src="photos/greekflag.webp" alt="Arbiola" style="display: block; height: 50px; width: auto; object-fit: cover; border: none; padding: 0; margin: 0;">
-                    </div>
-                    <div class="referral-content">
-                        <h3>Sofroni</h3>
-                        <p>Password: J7g3Fs</p>
-                    </div>
-                </a>
-            </div>  
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://link-target.net/448681/spiridoula-leaks" target="_blank" class="referral-box">
-                    <div class="referral-icon">
-                        <img src="photos/greekflag.webp" alt="Arbiola" style="display: block; height: 50px; width: auto; object-fit: cover; border: none; padding: 0; margin: 0;">
-                    </div>
-                    <div class="referral-content">
-                        <h3>Spiridoula</h3>
-                        <p>Password: ofPG9A</p>
-                    </div>
-                </a>
-            </div>  
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://direct-link.net/448681/superkiki-leaks" target="_blank" class="referral-box">
-                    <div class="referral-icon">
-                        <img src="photos/greekflag.webp" alt="Arbiola" style="display: block; height: 50px; width: auto; object-fit: cover; border: none; padding: 0; margin: 0;">
-                    </div>
-                    <div class="referral-content">
-                        <h3>SuperKiki</h3>
-                        <p>Password: K9WwaL</p>
-                    </div>
-                </a>
-            </div>  
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://link-center.net/448681/taekwondo-girl-leaks" target="_blank" class="referral-box">
-                    <div class="referral-icon">
-                        <img src="photos/greekflag.webp" alt="Arbiola" style="display: block; height: 50px; width: auto; object-fit: cover; border: none; padding: 0; margin: 0;">
-                    </div>
-                    <div class="referral-content">
-                        <h3>Taekwondo Girl</h3>
-                        <p>Password: oA3gqn</p>
-                    </div>
-                </a>
-            </div>  
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://link-target.net/448681/titi-leaks" target="_blank" class="referral-box">
-                    <div class="referral-icon">
-                        <img src="photos/greekflag.webp" alt="Arbiola" style="display: block; height: 50px; width: auto; object-fit: cover; border: none; padding: 0; margin: 0;">
-                    </div>
-                    <div class="referral-content">
-                        <h3>TITI</h3>
-                        <p>Password: HnayhT</p>
-                    </div>
-                </a>
-            </div>  
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://link-hub.net/448681/touni-leaks" target="_blank" class="referral-box">
-                    <div class="referral-icon">
-                        <img src="photos/greekflag.webp" alt="Arbiola" style="display: block; height: 50px; width: auto; object-fit: cover; border: none; padding: 0; margin: 0;">
-                    </div>
-                    <div class="referral-content">
-                        <h3>Touni</h3>
-                        <p>Password: AgVj17</p>
-                    </div>
-                </a>
-            </div>  
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://link-target.net/448681/xoulh-leaks" target="_blank" class="referral-box">
-                    <div class="referral-icon">
-                        <img src="photos/greekflag.webp" alt="Arbiola" style="display: block; height: 50px; width: auto; object-fit: cover; border: none; padding: 0; margin: 0;">
-                    </div>
-                    <div class="referral-content">
-                        <h3>Xoulh</h3>
-                        <p>Password: 42XiaP</p>
-                    </div>
-                </a>
-            </div>  
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://link-hub.net/448681/yroance-leaks" target="_blank" class="referral-box">
-                    <div class="referral-icon">
-                        <img src="photos/greekflag.webp" alt="Arbiola" style="display: block; height: 50px; width: auto; object-fit: cover; border: none; padding: 0; margin: 0;">
-                    </div>
-                    <div class="referral-content">
-                        <h3>Yroance</h3>
-                        <p>Password: JRMVLn</p>
-                    </div>
-                </a>
-            </div>  
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://link-center.net/448681/greek-videos" target="_blank" class="referral-box">
-                    <div class="referral-icon">
-                        <img src="photos/greekflag.webp" alt="Arbiola" style="display: block; height: 50px; width: auto; object-fit: cover; border: none; padding: 0; margin: 0;">
-                    </div>
-                    <div class="referral-content">
-                        <h3>Greek Videos</h3>
-                        <p>Password: YXVngA</p>
-                    </div>
-                </a>
-            </div>  
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://link-center.net/448681/instagram-leaks" target="_blank" class="referral-box">
-                    <div class="referral-icon">
-                        <img src="photos/greekflag.webp" alt="Arbiola" style="display: block; height: 50px; width: auto; object-fit: cover; border: none; padding: 0; margin: 0;">
-                    </div>
-                    <div class="referral-content">
-                        <h3>Instagram Leaks</h3>
-                        <p>Password: 5Cfbf1</p>
-                    </div>
-                </a>
-            </div>  
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://link-hub.net/448681/ome-tv-leaks" target="_blank" class="referral-box">
-                    <div class="referral-icon">
-                        <img src="photos/greekflag.webp" alt="Arbiola" style="display: block; height: 50px; width: auto; object-fit: cover; border: none; padding: 0; margin: 0;">
-                    </div>
-                    <div class="referral-content">
-                        <h3>OMETV</h3>
-                        <p>Password: izJPaC</p>
-                    </div>
-                </a>
-            </div>  
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://link-hub.net/448681/perioxes-leaks" target="_blank" class="referral-box">
-                    <div class="referral-icon">
-                        <img src="photos/greekflag.webp" alt="Arbiola" style="display: block; height: 50px; width: auto; object-fit: cover; border: none; padding: 0; margin: 0;">
-                    </div>
-                    <div class="referral-content">
-                        <h3>Perioxes</h3>
-                        <p>Password: 79LmSf</p>
-                    </div>
-                </a>
-            </div>  
+        </a>
         </div>
-    </div>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <a href="https://link-center.net/1288063/greek-videos" target="_blank" class="referral-box">
+                <span class="data-badge">100+</span>
+                <div class="referral-icon">
+                    <img src="photos/greekflag.webp" alt="Greek Videos">
+                </div>
+                <div class="referral-content">
+                    <h3>Greek Videos</h3>
+                    <p></p>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <a href="https://link-center.net/1288063/greek-instagram-leaks" target="_blank" class="referral-box">
+                <span class="data-badge">90+</span>
+                <div class="referral-icon">
+                    <img src="photos/greekflag.webp" alt="Instagram Leaks">
+                </div>
+                <div class="referral-content">
+                    <h3>Instagram Leaks</h3>
+                    <p></p>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <a href="https://link-target.net/1288063/ome-tv" target="_blank" class="referral-box">
+                <span class="data-badge">80+</span>
+                <div class="referral-icon">
+                    <img src="photos/greekflag.webp" alt="OMETV">
+                </div>
+                <div class="referral-content">
+                    <h3>OMETV</h3>
+                    <p></p>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <a href="https://link-center.net/1288063/perioxes" target="_blank" class="referral-box">
+                <span class="data-badge">75+</span>
+                <div class="referral-icon">
+                    <img src="photos/greekflag.webp" alt="Perioxes">
+                </div>
+                <div class="referral-content">
+                    <h3>Perioxes</h3>
+                    <p></p>
+                </div>
+            </a>
+        </div>
+        </div>
+        </div>
+
+
+        
+        <!-- Bootstrap JS and dependencies -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        </body>
+        </html>
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
