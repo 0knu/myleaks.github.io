@@ -7,158 +7,270 @@
     <title>myLeaks 🔞</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Particle.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <style>
+        /* General Styles */
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: white;
+            animation: gradientBG 10s ease infinite;
+            background-size: 400% 400%;
             min-height: 100vh;
             padding-top: 56px; /* Adjust based on navbar height */
         }
 
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         /* Navbar Styling */
         .navbar {
-            background-color: rgba(33, 37, 41, 0.9); /* Slightly darker transparent background */
+            background-color: rgba(15, 12, 41, 0.9);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 10;
-            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
         }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .navbar-brand img {
+            height: 40px; /* Adjust logo size */
+            margin-right: 10px; /* Space between logo and text */
+        }
+
         .navbar-brand, .nav-link {
             color: white !important;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Text shadow for readability */
+            font-weight: 500;
         }
-        .navbar-toggler {
-            border: none; /* Remove border around the hamburger icon */
-        }
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-        }
-        /* Dropdown menu styling */
-        .navbar-collapse {
-            justify-content: flex-end;
-        }
-        .nav-link {
-            transition: color 0.3s ease;
-        }
+
         .nav-link:hover {
-            color: #17a2b8 !important; /* Highlighted link color */
+            color: #17a2b8 !important;
         }
 
         /* Hero Section */
         .hero {
-            background-color: black;
             position: relative;
             height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: white;
             text-align: center;
             overflow: hidden;
+            background: linear-gradient(rgba(15, 12, 41, 0.7), rgba(15, 12, 41, 0.7));
         }
 
-        /* Decorative Dots */
-        .dot {
+        .hero h1 {
+            font-size: 5rem; /* Larger font size */
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #17a2b8;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem; /* Larger font size */
+            color: #a0a0a0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            animation: float 3s ease-in-out infinite 1s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Particle.js Background */
+        #particles-js {
             position: absolute;
-            background-color: white;
-            border-radius: 50%;
-            opacity: 0.7;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
         }
-        .dot.small {
-            width: 10px;
-            height: 10px;
-        }
-        .dot.medium {
-            width: 20px;
-            height: 20px;
-        }
-        .dot.large {
-            width: 30px;
-            height: 30px;
-        }
-        .dot:nth-child(1) { top: 20%; left: 10%; }
-        .dot:nth-child(2) { top: 50%; left: 30%; }
-        .dot:nth-child(3) { top: 70%; left: 20%; }
-        .dot:nth-child(4) { top: 10%; left: 60%; }
-        .dot:nth-child(5) { top: 40%; left: 80%; }
-        .dot:nth-child(6) { top: 90%; left: 70%; }
-        .dot:nth-child(7) { top: 30%; left: 50%; }
 
         /* Statistics Section */
         .stats {
-            background-color: #f8f9fa;
-            padding: 40px 20px;
+            padding: 80px 20px;
             text-align: center;
         }
+
         .stats h2 {
-            margin-bottom: 20px;
-            font-weight: bold;
-            color: #333;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: #17a2b8;
         }
+
+        .stats .card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 10px;
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stats .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
         .stats h3 {
-            font-size: 1.5rem;
+            font-size: 2rem;
+            font-weight: 600;
             margin: 15px 0;
-            color: #555;
+            color: #17a2b8;
         }
-        .stats .row > div {
+
+        .stats p {
+            font-size: 1rem;
+            color: #a0a0a0;
+        }
+
+        .stats i {
+            font-size: 2.5rem;
+            color: #17a2b8;
+            margin-bottom: 15px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .about h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: #17a2b8;
+        }
+
+        .about .card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 10px;
+            padding: 30px;
             margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .about .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .about p, .about ul {
+            font-size: 1rem;
+            color: #a0a0a0;
+            line-height: 1.6;
+        }
+
+        .about ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .about ul li {
+            margin-bottom: 10px;
         }
 
         /* Footer Section */
         footer {
-            background-color: #101820;
+            background: rgba(15, 12, 41, 0.9);
             color: white;
             text-align: center;
-            padding: 10px 0;
-            margin-top: auto; /* Push footer to the bottom */
+            padding: 40px 20px;
+            margin-top: auto;
         }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #17a2b8;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
         .social-links a {
             color: white;
-            margin: 0 10px;
-            text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
         }
+
         .social-links a:hover {
             color: #17a2b8;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* Slightly smaller title and subtitle */
-        .hero h1 {
-            font-size: 5rem; /* Slightly reduced size */
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-            letter-spacing: 1px;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        .hero h2 {
-            font-size: 3rem; /* Slightly reduced size */
+        footer p {
             margin-top: 10px;
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.8);
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            transition: opacity 0.5s ease;
+            font-size: 0.9rem;
+            color: #a0a0a0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+
+            .stats h2, .about h3 {
+                font-size: 2rem;
+            }
+
+            .stats h3 {
+                font-size: 1.5rem;
+            }
+
+            .stats p, .about p, .about ul {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Particle.js Background -->
+    <div id="particles-js"></div>
+
     <header>
         <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="#">myLeaks</a>
+            <a class="navbar-brand" href="#">
+                <img src="photos/logo.png" alt="myLeaks Logo"> <!-- Add your logo here -->
+                myLeaks
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -182,15 +294,6 @@
     </header>
 
     <section class="hero" id="home">
-        <!-- Decorative dots -->
-        <div class="dot small"></div>
-        <div class="dot medium"></div>
-        <div class="dot large"></div>
-        <div class="dot small"></div>
-        <div class="dot medium"></div>
-        <div class="dot large"></div>
-        <div class="dot small"></div>
-
         <h1 id="welcomeText">Welcome to myLeaks</h1>
         <h2 id="subtitleText">No1 Site for Leaks WorldWide!</h2>
     </section>
@@ -200,78 +303,93 @@
             <h2>Our Statistics</h2>
             <div class="row">
                 <div class="col-md-4">
-                    <h3 id="visitorCount">Members: 95 </h3>
+                    <div class="card">
+                        <i class="fas fa-users"></i>
+                        <h3 id="visitorCount">Members: 0</h3>
+                    </div>
                 </div>
                 <div class="col-md-4">
-                    <h3 id="countryCount">Countries: 18</h3>
+                    <div class="card">
+                        <i class="fas fa-globe"></i>
+                        <h3 id="countryCount">Countries: 2</h3>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    <h3 id="contentSize">Content: 140,000 Gigabytes</h3>
-                    <link rel="stylesheet" href="home.css">
+                <div class="col-md-4">
+                    <div class="card">
+                        <i class="fas fa-database"></i>
+                        <h3 id="contentSize">Content: 140 GB</h3>
+                    </div>
                 </div>
             </div>
         </div>
-        <hr>
     </section>
 
     <section class="about" id="about">
-        <center>
-            <h3><strong>About Us</strong></h3>
-            <p><strong>Welcome to our platform, your go-to resource for free leaks from around the world. 
-                Since our launch in 2018, we have grown from focusing solely on OnlyFans leaks to becoming a global hub with over 100,000 monthly visitors.</strong></p>
-            <p><strong>What We Offer:</strong></p>
-            <ul class="list-unstyled">
-                <li><strong>Diverse Content:</strong> Access a wide range of leaks from multiple countries and platforms.</li>
-                <li><strong>User-Centric Design:</strong> Enjoy a seamless browsing experience with easy navigation.</li>
-                <li><strong>Quality Assurance:</strong> Our team verifies information to ensure accuracy and reliability.</li>
-                <li><strong>Community Engagement:</strong> We value your feedback and encourage interaction to improve our services.</li>
-            </ul>
-            <p><strong>Join us on this journey as we continue to provide the best leaks for free. Thank you for being part of our community!</strong></p>
-        </center>
-    </section>
-    
-    
-    <footer>
-        <div class="social-links">
-            <a href="https://discord.gg/FrJa4C5m" target="_blank">Discord</a>
-            <a href="https://x.com/0knuSOL" target="_blank">Twitter</a>
+        <h3>About Us</h3>
+        <div class="container">
+            <div class="card">
+                <p>Welcome to our platform, your go-to resource for free leaks from around the world. Since our launch in 2018, we have grown from focusing solely on OnlyFans leaks to becoming a global hub with over 100,000 monthly visitors.</p>
+                <p>What We Offer:</p>
+                <ul>
+                    <li><strong>Diverse Content:</strong> Access a wide range of leaks from multiple countries and platforms.</li>
+                    <li><strong>User-Centric Design:</strong> Enjoy a seamless browsing experience with easy navigation.</li>
+                    <li><strong>Quality Assurance:</strong> Our team verifies information to ensure accuracy and reliability.</li>
+                    <li><strong>Community Engagement:</strong> We value your feedback and encourage interaction to improve our services.</li>
+                </ul>
+                <p>Join us on this journey as we continue to provide the best leaks for free. Thank you for being part of our community!</p>
+            </div>
         </div>
-        <br>
-        <p>&copy; 2024 All Rights Reserved. myLeaks Loud & Proud.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3>Connect With Us</h3>
+            <div class="social-links">
+                <a href="https://discord.gg/tzqax3tt2s" target="_blank"><i class="fab fa-discord"></i></a>
+                <a href="https://x.com/0knuSOL" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2024 All Rights Reserved. myLeaks Loud & Proud.</p>
+        </div>
     </footer>
 
-<!-- Bootstrap JS and dependencies -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<script>
-    function typeWriter(element, text, delay) {
-        let i = 0;
-        function typing() {
-            if (i < text.length) {
-                element.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typing, delay);
-            } else {
-                element.style.opacity = 1; // Fade in after typing
+    <!-- Particle.js Configuration -->
+    <script>
+        particlesJS.load('particles-js', 'particles.json', function() {
+            console.log('Particles.js loaded!');
+        });
+    </script>
+
+    <script>
+        function typeWriter(element, text, delay) {
+            let i = 0;
+            function typing() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(typing, delay);
+                } else {
+                    element.style.opacity = 1; // Fade in after typing
+                }
             }
+            typing();
         }
-        typing();
-    }
 
-    document.addEventListener("DOMContentLoaded", function() {
-        const welcomeText = document.getElementById("welcomeText");
-        const subtitleText = document.getElementById("subtitleText");
-        welcomeText.innerHTML = ""; // Clear the text to prevent duplication
-        subtitleText.innerHTML = ""; // Clear the text to prevent duplication
-        typeWriter(welcomeText, "Welcome to myLeaks", 100); // Typing effect for welcome text
-        setTimeout(() => {
-            typeWriter(subtitleText, "No1 Site for Leaks WorldWide!", 100); // Typing effect for subtitle
-        }, welcomeText.innerHTML.length * 100 + 500); // Delay for subtitle
-    });
-</script>
-
-
+        document.addEventListener("DOMContentLoaded", function() {
+            const welcomeText = document.getElementById("welcomeText");
+            const subtitleText = document.getElementById("subtitleText");
+            welcomeText.innerHTML = ""; // Clear the text to prevent duplication
+            subtitleText.innerHTML = ""; // Clear the text to prevent duplication
+            typeWriter(welcomeText, "Welcome to myLeaks", 100); // Typing effect for welcome text
+            setTimeout(() => {
+                typeWriter(subtitleText, "No1 Site for Leaks WorldWide!", 100); // Typing effect for subtitle
+            }, welcomeText.innerHTML.length * 100 + 500); // Delay for subtitle
+        });
+    </script>
 </body>
 </html>
