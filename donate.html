@@ -7,54 +7,352 @@
     <title>Donations</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* General Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #00142a; /* Dark navy background */
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
             color: white;
+            animation: gradientBG 10s ease infinite;
+            background-size: 400% 400%;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         /* Navbar Styling */
         .navbar {
-            background-color: rgba(33, 37, 41, 0.9); /* Slightly darker transparent background */
+            background-color: rgba(15, 12, 41, 0.9);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 10;
-            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
-        }
-        .navbar-brand, .nav-link {
-            color: white !important;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Text shadow for readability */
-        }
-        .navbar-toggler {
-            border: none; /* Remove border around the hamburger icon */
-        }
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-        }
-        .navbar-collapse {
-            justify-content: flex-end;
-        }
-        .nav-link:hover {
-            color: #17a2b8 !important; /* Highlighted link color */
         }
 
-        /* Centered Text */
+        .navbar-brand, .nav-link {
+            color: white !important;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            color: #17a2b8 !important;
+        }
+
+        /* Centered Content */
         .center-container {
-            height: calc(100vh - 56px); /* Full height minus navbar height */
+            height: calc(100vh - 56px);
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
+            flex-direction: column;
+            padding: 20px;
         }
 
+        /* Title Animation */
         .center-text {
-            font-family: 'Georgia', serif; /* Nice font style */
-            font-size: 2rem; /* Large font size */
-            font-weight: bold; /* Bold font */
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #17a2b8;
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Subtitle Styling */
+        .subtitle {
+            font-size: 1.1rem;
+            color: #a0a0a0;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            width: 50%;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .progress {
+            height: 15px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, #17a2b8, #0d6efd);
+            height: 100%;
+            border-radius: 10px;
+            width: 45%; /* Adjust this value */
+            position: relative;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 5px rgba(23, 162, 184, 0.5);
+            }
+            100% {
+                box-shadow: 0 0 15px rgba(23, 162, 184, 0.8);
+            }
+        }
+
+        .progress-text {
+            font-size: 0.9rem;
+            color: #a0a0a0;
+            margin-top: 5px;
+        }
+
+        /* Tooltip for Progress Bar */
+        .progress-bar::after {
+            content: attr(data-progress);
+            position: absolute;
+            right: -20px;
+            top: -30px;
+            background-color: #17a2b8;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .progress-bar:hover::after {
+            opacity: 1;
+        }
+
+        /* Small Text Below Progress Bar */
+        .update-text {
+            font-size: 0.8rem;
+            color: #a0a0a0;
+            margin-top: 5px;
+        }
+
+        /* Call-to-Action Button */
+        .cta-button {
+            background: linear-gradient(90deg, #17a2b8, #0d6efd);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(23, 162, 184, 0.4);
+        }
+
+        /* Featured Donors Section */
+        .featured-donors {
+            margin-top: 40px;
+            text-align: center;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .featured-donors h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #17a2b8;
+        }
+
+        .donor-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .donor {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            color: #a0a0a0;
+        }
+
+        /* Statistics Section */
+        .statistics {
+            margin-top: 40px;
+            text-align: center;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .statistics h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #17a2b8;
+        }
+
+        .stats-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            width: 150px;
+            text-align: center;
+        }
+
+        .stat h4 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #17a2b8;
+        }
+
+        .stat p {
+            font-size: 0.9rem;
+            color: #a0a0a0;
+        }
+
+        /* Donation Methods Section */
+        .donation-methods {
+            display: none; /* Hidden by default */
+            margin-top: 40px;
+            text-align: center;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .donation-methods h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #17a2b8;
+        }
+
+        .donation-cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .donation-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .donation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .donation-card i {
+            font-size: 2rem;
+            color: #17a2b8;
+            margin-bottom: 10px;
+        }
+
+        .donation-card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .donation-card p {
+            font-size: 0.9rem;
+            color: #a0a0a0;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 60px;
+            padding: 20px;
+            background-color: rgba(15, 12, 41, 0.9);
+            text-align: center;
+            color: #a0a0a0;
+        }
+
+        .social-links {
+            margin-bottom: 10px;
+        }
+
+        .social-links a {
+            color: #a0a0a0;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #17a2b8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .progress-container {
+                width: 80%;
+            }
+
+            .donation-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .donation-card {
+                width: 80%;
+            }
+
+            .stats-grid {
+                gap: 20px;
+            }
+
+            .stat {
+                width: 120px;
+            }
         }
     </style>
 </head>
@@ -62,7 +360,10 @@
     <!-- Navigation Bar -->
     <header>
         <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="#">myLeaks</a>
+            <a class="navbar-brand" href="#">
+                <img src="photos/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+                myLeaks
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -85,16 +386,125 @@
         </nav>
     </header>
 
-    <!-- Centered Text -->
+    <!-- Centered Content -->
     <div class="center-container">
-        <div class="center-text">
-            Donation will be available soon...
+        <div class="center-text">Help Us Grow!</div>
+        <div class="subtitle">
+            We are aiming to reach our goal to keep the site running.
+        </div>
+
+        <!-- Progress Bar with Money Goal -->
+        <div class="progress-container">
+            <div class="progress">
+                <div class="progress-bar" style="width: 0%;" data-progress="0%"></div>
+            </div>
+            <div class="progress-text">$0 raised of $100 goal</div>
+            <div class="update-text">Updates every 24 hours</div>
+        </div>
+
+        <!-- Call-to-Action Button -->
+        <button class="cta-button" id="toggleButton" onclick="toggleSections()">Donate Now</button>
+
+        <!-- Featured Donors Section -->
+        <div class="featured-donors" id="featuredDonors">
+            <h3>Recent Donors</h3>
+            <div class="donor-list">
+                <div class="donor"></div>
+                <div class="donor"></div>
+                <div class="donor"></div>
+                <div class="donor"></div>
+            </div>
+        </div>
+
+        <!-- Statistics Section -->
+        <div class="statistics" id="statistics">
+            <h3>Our Impact</h3>
+            <div class="stats-grid">
+                <div class="stat">
+                    <h4>$0</h4>
+                    <p>Raised</p>
+                </div>
+                <div class="stat">
+                    <h4>0%</h4>
+                    <p>Progress</p>
+                </div>
+                <div class="stat">
+                    <h4>0</h4>
+                    <p>Donors</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Donation Methods Section -->
+        <div class="donation-methods" id="donationMethods">
+            <h3>Donation Methods</h3>
+            <div class="donation-cards">
+                <div class="donation-card" onclick="window.open('https://paypal.me/ScarFaceGreek?country.x=GR&locale.x=el_GR', '_blank')">
+                    <i class="fab fa-paypal"></i>
+                    <h4>PayPal</h4>
+                    <p>Donate securely via PayPal.</p>
+                </div>
+                <div class="donation-card" onclick="copyToClipboard('3Cpx2M1sHvW1TUE5mD1DVtSp2R7MegFSeE')">
+                    <i class="fab fa-bitcoin"></i>
+                    <h4>Bitcoin</h4>
+                    <p>Click to copy wallet address.</p>
+                </div>
+                <div class="donation-card" onclick="copyToClipboard('0x4fe8a3656c621Da3586367394Dbd9970828B9c37')">
+                    <i class="fab fa-ethereum"></i>
+                    <h4>Ethereum</h4>
+                    <p>Click to copy wallet address.</p>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3>Connect With Us</h3>
+            <div class="social-links">
+                <a href="https://discord.gg/tzqax3tt2s" target="_blank"><i class="fab fa-discord"></i></a>
+                <a href="https://x.com/0knuSOL" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2024 All Rights Reserved. myLeaks Loud & Proud.</p>
+        </div>
+    </footer>
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript for Button Interaction and Copy to Clipboard -->
+    <script>
+        function toggleSections() {
+            const featuredDonors = document.getElementById('featuredDonors');
+            const statistics = document.getElementById('statistics');
+            const donationMethods = document.getElementById('donationMethods');
+            const toggleButton = document.getElementById('toggleButton');
+
+            if (donationMethods.style.display === 'none' || !donationMethods.style.display) {
+                // Show Donation Methods, hide others
+                featuredDonors.style.display = 'none';
+                statistics.style.display = 'none';
+                donationMethods.style.display = 'block';
+                toggleButton.textContent = 'Our Stats';
+            } else {
+                // Show Featured Donors and Statistics, hide Donation Methods
+                featuredDonors.style.display = 'block';
+                statistics.style.display = 'block';
+                donationMethods.style.display = 'none';
+                toggleButton.textContent = 'Donate Now';
+            }
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Copied to clipboard: ' + text);
+            }).catch(() => {
+                alert('Failed to copy text.');
+            });
+        }
+    </script>
 </body>
 </html>
