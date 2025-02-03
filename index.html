@@ -63,6 +63,20 @@
             color: #17a2b8 !important;
         }
 
+        /* Custom Navbar Toggler Icon */
+        .navbar-toggler {
+            border: none; /* Remove the border */
+            outline: none; /* Remove the outline */
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none; /* Remove the focus shadow */
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 极客时间 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
         /* Hero Section */
         .hero {
             position: relative;
@@ -121,11 +135,12 @@
         }
 
         .stats .card {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.1); /* Restored original color */
             border: none;
             border-radius: 10px;
             padding: 30px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 20px; /* Add space between cards */
         }
 
         .stats .card:hover {
@@ -257,6 +272,24 @@
 
             .stats p, .about p, .about ul {
                 font-size: 0.9rem;
+            }
+
+            /* Add spacing for mobile */
+            .stats, .about {
+                padding: 40px 15px; /* Reduced padding for mobile */
+            }
+
+            .hero {
+                padding: 0 15px; /* Add horizontal padding for mobile */
+            }
+
+            .navbar {
+                padding: 0.5rem 1rem; /* Add padding to navbar for mobile */
+            }
+
+            /* Ensure space between stats cards on mobile */
+            .stats .card {
+                margin-bottom: 20px;
             }
         }
     </style>
