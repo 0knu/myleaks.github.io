@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="photos/logo.png" type="image/x-icon">
-    <title>Greek Leaks</title>
+    <title>USA Leaks</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
@@ -12,24 +12,33 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #00142a; /* Dark navy background */
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: white;
+            animation: gradientBG 10s ease infinite;
+            background-size: 400% 400%;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         /* Navbar Styling */
         .navbar {
-            background-color: rgba(33, 37, 41, 0.9); /* Slightly darker transparent background */
+            background-color: rgba(15, 12, 41, 0.9);
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 10;
-            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
         }
         .navbar-brand, .nav-link {
             color: white !important;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Text shadow for readability */
+            font-weight: 500;
         }
         .navbar-toggler {
-            border: none; /* Remove border around the hamburger icon */
+            border: none;
         }
         .navbar-toggler-icon {
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
@@ -38,65 +47,103 @@
             justify-content: flex-end;
         }
         .nav-link:hover {
-            color: #17a2b8 !important; /* Highlighted link color */
+            color: #17a2b8 !important;
         }
 
         /* Referral Box Styling */
         .referral-box {
-            background: linear-gradient(145deg, #121b2f, #0a1123); /* Gradient for modern look */
-            border-radius: 25px; /* Rounded edges */
-            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 25px;
             margin: 15px;
-            margin-bottom: 20px; /* Added space between boxes */
             text-align: center;
-            height: 120px; /* Adjust height to match screenshot style */
-            max-width: 400px; /* Set a maximum width for the boxes */
-            width: 100%; /* Make the boxes take full width of the column */
-            display: flex;
-            align-items: center;
-            justify-content: space-between; /* Space out content horizontally */
-            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Softer shadow */
-            color: white;
-            transition: transform 0.3s ease;
-        }
-
-        .referral-box:hover {
-            transform: scale(1.05); /* Slight zoom effect */
-        }
-
-        /* Icon Styles */
-        .referral-icon {
-            height: 70px; /* Set flag icon height */
-            width: auto; /* Automatically adjust width for rectangular flags */
+            height: 180px;
+            max-width: 400px;
+            width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px; /* Space between icon and text */
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            color: white;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+        }
+
+        .referral-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .referral-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: 0.5s;
+        }
+
+        .referral-box:hover::before {
+            left: 100%;
+        }
+
+        .referral-icon {
             flex-shrink: 0;
+            margin-right: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .referral-box:hover .referral-icon {
+            transform: scale(1.1);
         }
 
         .referral-icon img {
-            height: 100%; /* Icon fills its container */
-            width: auto; /* Maintain aspect ratio */
-            border-radius: 5px; /* Slightly rounded corners, if desired */
+            height: 60px;
+            width: auto;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+            border-radius: 4px;
         }
 
         .referral-content {
-            flex-grow: 1; /* Make the text take remaining space */
+            flex-grow: 1;
             text-align: left;
         }
 
         .referral-content h3 {
-            margin: 0;
-            font-size: 18px;
-            font-weight: bold;
+            margin: 0 0 8px 0;
+            font-size: 1.4rem;
+            font-weight: 600;
             color: #fff;
+            letter-spacing: -0.5px;
         }
 
         .referral-content p {
             margin: 0;
-            font-size: 14px;
-            color: #cfcfcf;
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.4;
+            font-weight: 300;
+        }
+
+        .data-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(45deg, #2196f3, #e91e63);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
@@ -110,18 +157,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="leaks.html">Leaks</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="donate.html">Donation</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="leaks.html">Leaks</a></li>
+                    <li class="nav-item"><a class="nav-link" href="donate.html">Donation</a></li>
                 </ul>
             </div>
         </nav>
@@ -131,50 +170,52 @@
     <div class="container mt-5 pt-5">
         <h1 class="text-center" style="color: #fff;">USA Leaks</h1>
         <div class="row justify-content-center">
-            <!-- Referral Boxes -->
+            <!-- Referral Box 1 -->
             <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://direct-link.net/448681/corrina-kopf" target="_blank">
-                    <div class="referral-box">
-                        <div class="referral-icon">
-                            <img src="photos/usaflag.webp" alt="USA Leaks">
-                        </div>
-                        <div class="referral-content">
-                            <h3>Corrina Kopf</h3>
-                            <p>2000+ Photos & Videos</p>
-                        </div>
+                <a href="https://link-hub.net/1288063/corinna-kopf-leaks" target="_blank" class="referral-box">
+                    <span class="data-badge">500+</span>
+                    <div class="referral-icon">
+                        <img src="photos/usaflag.webp" alt="Corrina Kopf">
+                    </div>
+                    <div class="referral-content">
+                        <h3>Corrina Kopf</h3>
+                        <p></p>
                     </div>
                 </a>
             </div>
+            <!-- Referral Box 2 -->
             <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://direct-link.net/448681/iggy-azalea-leaks" target="_blank">
-                    <div class="referral-box">
-                        <div class="referral-icon">
-                            <img src="photos/usaflag.webp" alt="Iggy Azalea">
-                        </div>
-                        <div class="referral-content">
-                            <h3>Iggy Azalea</h3>
-                            <p>2000+ Photos & Videos</p>
-                        </div>
+                <a href="https://direct-link.net/1288063/iggy-azalea-leaks" target="_blank" class="referral-box">
+                    <span class="data-badge">20GB+</span>
+                    <div class="referral-icon">
+                        <img src="photos/usaflag.webp" alt="Iggy Azalea">
+                    </div>
+                    <div class="referral-content">
+                        <h3>Iggy Azalea</h3>
+                        <p></p>
                     </div>
                 </a>
             </div>
+            <!-- Referral Box 3 -->
             <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="https://link-target.net/448681/bhad-bhadie-leaks" target="_blank">
-                    <div class="referral-box">
-                        <div class="referral-icon">
-                            <img src="photos/usaflag.webp" alt="USA Leaks">
-                        </div>
-                        <div class="referral-content">
-                            <h3>Bhad Bhadie</h3>
-                            <p>5 Gigabytes of Content!</p>
-                        </div>
+                <a href="https://link-center.net/1288063/bhad-bhadie-leaks" target="_blank" class="referral-box">
+                    <span class="data-badge">5GB+</span>
+                    <div class="referral-icon">
+                        <img src="photos/usaflag.webp" alt="Bhad Bhadie">
+                    </div>
+                    <div class="referral-content">
+                        <h3>Bhad Bhadie</h3>
+                        <p></p>
                     </div>
                 </a>
             </div>
-            
-
             <!-- Add more referral boxes as needed -->
         </div>
     </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
