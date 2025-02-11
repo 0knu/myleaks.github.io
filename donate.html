@@ -114,7 +114,8 @@
 
         /* Progress Bar */
         .progress-container {
-            width: 50%;
+            width: 100%;
+            max-width: 500px;
             margin-bottom: 10px;
             position: relative;
         }
@@ -276,7 +277,7 @@
 
         .donation-methods h3 {
             font-size: 1.5rem;
-            font-weight: 600;
+ font-weight: 600;
             margin-bottom: 20px;
             color: #17a2b8;
         }
@@ -348,7 +349,7 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .progress-container {
-                width: 80%;
+                width: 90%;
             }
 
             .donation-cards {
@@ -357,7 +358,7 @@
             }
 
             .donation-card {
-                width: 80%;
+                width: 90%;
             }
 
             .stats-grid {
@@ -366,6 +367,26 @@
 
             .stat {
                 width: 120px;
+            }
+
+            .center-text {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .progress-text, .update-text {
+                font-size: 0.8rem;
+            }
+
+            .cta-button {
+                font-size: 0.9rem;
+            }
+
+            .featured-donors h3, .statistics h3, .donation-methods h3 {
+                font-size: 1.3rem;
             }
         }
     </style>
@@ -410,7 +431,7 @@
         <!-- Progress Bar with Money Goal -->
         <div class="progress-container">
             <div class="progress">
-                <div class="progress-bar" style="width: 0%;" data-progress="0%"></div>
+                <div class="progress-bar" style="width : 0%;" data-progress="0%"></div>
             </div>
             <div class="progress-text">$0 raised of $100 goal</div>
             <div class="update-text">Updates every 24 hours</div>
